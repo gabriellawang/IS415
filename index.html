@@ -10,10 +10,20 @@
         <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
         <style>
+        .ol-geocoder.gcd-gl-container {
+            top: 65px!important;
+        }
+        .ol-geocoder .gcd-gl-btn {
+            width: 21px!important;
+            height: 21px!important;
+        }
+        </style>
+        <style>
         html, body {
             background-color: #ffffff;
         }
         </style>
+    <link href="http://cdn.jsdelivr.net/openlayers.geocoder/latest/ol3-geocoder.min.css" rel="stylesheet">
         <style>
         html, body, #map {
             width: 100%;
@@ -31,11 +41,13 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+        <script src="resources/qgis2web_expressions.js"></script>
         <script src="resources/polyfills.js"></script>
         <script src="./resources/ol.js"></script>
         <script src="./resources/ol3-layerswitcher.js"></script>
-        <script src="layers/subzonepopulationage.js"></script><script src="layers/2kmlibbuffer.js"></script><script src="layers/1kmlibbuffer.js"></script><script src="layers/populationlibjoined.js"></script><script src="layers/MRT_LRT_Line.js"></script><script src="layers/MRTstations.js"></script><script src="layers/schools.js"></script><script src="layers/schoolsoutsidebuffer.js"></script><script src="layers/libraries.js"></script>
-        <script src="styles/subzonepopulationage_style.js"></script><script src="styles/2kmlibbuffer_style.js"></script><script src="styles/1kmlibbuffer_style.js"></script><script src="styles/populationlibjoined_style.js"></script><script src="styles/MRT_LRT_Line_style.js"></script><script src="styles/MRTstations_style.js"></script><script src="styles/schools_style.js"></script><script src="styles/schoolsoutsidebuffer_style.js"></script><script src="styles/libraries_style.js"></script>
+    <script src="http://cdn.jsdelivr.net/openlayers.geocoder/latest/ol3-geocoder.js"></script>
+        <script src="layers/subzonepopulationage0.js"></script><script src="layers/schools1.js"></script><script src="layers/libraries2.js"></script><script src="layers/1kmlibbuffer3.js"></script><script src="layers/2kmlibbuffer4.js"></script><script src="layers/populationlibjoined5.js"></script><script src="layers/schoolsoutsidebuffer6.js"></script><script src="layers/MRT_LRT_Line7.js"></script><script src="layers/MRTstations8.js"></script>
+        <script src="styles/subzonepopulationage0_style.js"></script><script src="styles/schools1_style.js"></script><script src="styles/libraries2_style.js"></script><script src="styles/1kmlibbuffer3_style.js"></script><script src="styles/2kmlibbuffer4_style.js"></script><script src="styles/populationlibjoined5_style.js"></script><script src="styles/schoolsoutsidebuffer6_style.js"></script><script src="styles/MRT_LRT_Line7_style.js"></script><script src="styles/MRTstations8_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/qgis2web.js"></script>
         <script src="./resources/Autolinker.min.js"></script>

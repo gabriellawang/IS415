@@ -1,18 +1,22 @@
 var size = 0;
 
-var styleCache_MRTstations={}
-var style_MRTstations = function(feature, resolution){
+var styleCache_libraries2={}
+var style_libraries2 = function(feature, resolution){
+    var context = {
+        feature: feature,
+        variables: {}
+    };
     var value = ""
-    var size = 0;
+    var size = feature.get('features').length;
     var style = [ new ol.style.Style({
         image: new ol.style.Icon({
                   imgSize: [580, 580],
-                  scale: 0.0206896551724,
-                  anchor: [6, 6],
+                  scale: 0.0327586206897,
+                  anchor: [9, 9],
                   anchorXUnits: "pixels",
                   anchorYUnits: "pixels",
                   rotation: 0.0,
-                  src: "styles/transport_train_station2.svg"
+                  src: "styles/amenity_library.svg"
             })
     })];
     if ("" !== null) {
@@ -22,9 +26,9 @@ var style_MRTstations = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_MRTstations[key]){
+    if (!styleCache_libraries2[key]){
         var text = new ol.style.Text({
-              font: '10.725px \'MS Shell Dlg 2\', sans-serif',
+              font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
               textBaseline: "center",
               textAlign: "left",
@@ -34,9 +38,9 @@ var style_MRTstations = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_MRTstations[key] = new ol.style.Style({"text": text})
+        styleCache_libraries2[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_MRTstations[key]];
+    var allStyles = [styleCache_libraries2[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

@@ -1,18 +1,22 @@
 var size = 0;
 
-var styleCache_libraries={}
-var style_libraries = function(feature, resolution){
+var styleCache_MRTstations8={}
+var style_MRTstations8 = function(feature, resolution){
+    var context = {
+        feature: feature,
+        variables: {}
+    };
     var value = ""
-    var size = 0;
+    var size = feature.get('features').length;
     var style = [ new ol.style.Style({
         image: new ol.style.Icon({
                   imgSize: [579.997, 579.997],
-                  scale: 0.0206897621884,
-                  anchor: [6, 6],
+                  scale: 0.0379312306788,
+                  anchor: [11, 11],
                   anchorXUnits: "pixels",
                   anchorYUnits: "pixels",
                   rotation: 0.0,
-                  src: "styles/city_building.svg"
+                  src: "styles/railway=station.svg"
             })
     })];
     if ("" !== null) {
@@ -22,9 +26,9 @@ var style_libraries = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_libraries[key]){
+    if (!styleCache_MRTstations8[key]){
         var text = new ol.style.Text({
-              font: '10.725px \'MS Shell Dlg 2\', sans-serif',
+              font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
               textBaseline: "center",
               textAlign: "left",
@@ -34,9 +38,9 @@ var style_libraries = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_libraries[key] = new ol.style.Style({"text": text})
+        styleCache_MRTstations8[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_libraries[key]];
+    var allStyles = [styleCache_MRTstations8[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

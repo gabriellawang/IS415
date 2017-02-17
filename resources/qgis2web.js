@@ -25,11 +25,11 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1
+         maxZoom: 13, minZoom: 11
     })
 });
 
-map.getView().fit([11530046.398542, 128124.662995, 11590362.858057, 164612.656951], map.getSize());
+map.getView().fit([11531337.741007, 128124.850142, 11589075.086233, 164610.800052], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -248,6 +248,14 @@ map.on('singleclick', function(evt) {
 
 
 
+var geocoder = new Geocoder('nominatim', {
+  provider: 'osm',
+  lang: 'en-US',
+  placeholder: 'Search for ...',
+  limit: 5,
+  keepOpen: true
+});
+map.addControl(geocoder);
 
 var attribution = document.getElementsByClassName('ol-attribution')[0];
 var attributionList = attribution.getElementsByTagName('ul')[0];

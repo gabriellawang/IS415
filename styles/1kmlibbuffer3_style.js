@@ -1,11 +1,15 @@
 var size = 0;
 
-var styleCache_1kmlibbuffer={}
-var style_1kmlibbuffer = function(feature, resolution){
+var styleCache_1kmlibbuffer3={}
+var style_1kmlibbuffer3 = function(feature, resolution){
+    var context = {
+        feature: feature,
+        variables: {}
+    };
     var value = ""
     var size = 0;
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.776471)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(71,185,160,0.776471)'})
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.59)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(162,68,129,0.59)'})
     })];
     if (feature.get("NUMPOINTS") !== null) {
         var labelText = String(feature.get("NUMPOINTS"));
@@ -14,9 +18,9 @@ var style_1kmlibbuffer = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_1kmlibbuffer[key]){
+    if (!styleCache_1kmlibbuffer3[key]){
         var text = new ol.style.Text({
-              font: '15.925px \'MS Shell Dlg 2\', sans-serif',
+              font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
               textBaseline: "center",
               textAlign: "left",
@@ -26,9 +30,9 @@ var style_1kmlibbuffer = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_1kmlibbuffer[key] = new ol.style.Style({"text": text})
+        styleCache_1kmlibbuffer3[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_1kmlibbuffer[key]];
+    var allStyles = [styleCache_1kmlibbuffer3[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };
