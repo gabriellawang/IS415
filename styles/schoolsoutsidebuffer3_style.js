@@ -1,5 +1,5 @@
 var size = 0;
-function categories_schoolsoutsidebuffer6(feature, value) {
+function categories_schoolsoutsidebuffer3(feature, value) {
                 switch(value) {case 'Junior Colleges/Centralised Institute':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.8 + size,
@@ -30,14 +30,14 @@ default:
             stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(228,66,134,1.0)'})})
     })];
                     break;}};
-var styleCache_schoolsoutsidebuffer6={}
-var style_schoolsoutsidebuffer6 = function(feature, resolution){
+var styleCache_schoolsoutsidebuffer3={}
+var style_schoolsoutsidebuffer3 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
     var value = feature.get("POI_CHAR");
-    var style = categories_schoolsoutsidebuffer6(feature, value);
+    var style = categories_schoolsoutsidebuffer3(feature, value);
     if ("" !== null) {
         var labelText = String("");
     } else {
@@ -45,7 +45,7 @@ var style_schoolsoutsidebuffer6 = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_schoolsoutsidebuffer6[key]){
+    if (!styleCache_schoolsoutsidebuffer3[key]){
         var text = new ol.style.Text({
               font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
@@ -57,9 +57,9 @@ var style_schoolsoutsidebuffer6 = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_schoolsoutsidebuffer6[key] = new ol.style.Style({"text": text})
+        styleCache_schoolsoutsidebuffer3[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_schoolsoutsidebuffer6[key]];
+    var allStyles = [styleCache_schoolsoutsidebuffer3[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

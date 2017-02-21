@@ -1,13 +1,13 @@
 var size = 0;
 
-var styleCache_libraries2={}
-var style_libraries2 = function(feature, resolution){
+var styleCache_libraries4={}
+var style_libraries4 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
     var value = ""
-    var size = feature.get('features').length;
+    var size = 0;
     var style = [ new ol.style.Style({
         image: new ol.style.Icon({
                   imgSize: [580, 580],
@@ -26,7 +26,7 @@ var style_libraries2 = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_libraries2[key]){
+    if (!styleCache_libraries4[key]){
         var text = new ol.style.Text({
               font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
@@ -38,9 +38,9 @@ var style_libraries2 = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_libraries2[key] = new ol.style.Style({"text": text})
+        styleCache_libraries4[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_libraries2[key]];
+    var allStyles = [styleCache_libraries4[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

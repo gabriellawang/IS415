@@ -1,5 +1,5 @@
 var size = 0;
-function categories_populationlibjoined5(feature, value) {
+function categories_populationlibjoined8(feature, value) {
                 switch(value) {case 'Ang Mo Kio Public Library':
                     return [ new ol.style.Style({
         stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.41)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(231,76,78,0.41)'})
@@ -145,14 +145,14 @@ default:
         stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.41)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(153,21,201,0.41)'})
     })];
                     break;}};
-var styleCache_populationlibjoined5={}
-var style_populationlibjoined5 = function(feature, resolution){
+var styleCache_populationlibjoined8={}
+var style_populationlibjoined8 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
     var value = feature.get("NAME");
-    var style = categories_populationlibjoined5(feature, value);
+    var style = categories_populationlibjoined8(feature, value);
     if (feature.get("sum5TO19") !== null) {
         var labelText = String(feature.get("sum5TO19"));
     } else {
@@ -160,7 +160,7 @@ var style_populationlibjoined5 = function(feature, resolution){
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_populationlibjoined5[key]){
+    if (!styleCache_populationlibjoined8[key]){
         var text = new ol.style.Text({
               font: '16.9px \'.SF NS Text\', sans-serif',
               text: labelText,
@@ -172,9 +172,9 @@ var style_populationlibjoined5 = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_populationlibjoined5[key] = new ol.style.Style({"text": text})
+        styleCache_populationlibjoined8[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_populationlibjoined5[key]];
+    var allStyles = [styleCache_populationlibjoined8[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

@@ -1,7 +1,7 @@
 var size = 0;
 
-var styleCache_2kmlibbuffer4={}
-var style_2kmlibbuffer4 = function(feature, resolution){
+var styleCache_1kmlibbuffer6={}
+var style_1kmlibbuffer6 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -9,18 +9,18 @@ var style_2kmlibbuffer4 = function(feature, resolution){
     var value = ""
     var size = 0;
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.65)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(245,161,169,0.65)'})
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,0.91)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(178,223,138,0.91)'})
     })];
-    if ("" !== null) {
-        var labelText = String("");
+    if (feature.get("NUMPOINTS") !== null) {
+        var labelText = String(feature.get("NUMPOINTS"));
     } else {
         var labelText = ""
     }
     var key = value + "_" + labelText
 
-    if (!styleCache_2kmlibbuffer4[key]){
+    if (!styleCache_1kmlibbuffer6[key]){
         var text = new ol.style.Text({
-              font: '16.9px \'.SF NS Text\', sans-serif',
+              font: '16.9px \'Arial\', sans-serif',
               text: labelText,
               textBaseline: "center",
               textAlign: "left",
@@ -30,9 +30,9 @@ var style_2kmlibbuffer4 = function(feature, resolution){
                 color: 'rgba(0, 0, 0, 255)'
               }),
             });
-        styleCache_2kmlibbuffer4[key] = new ol.style.Style({"text": text})
+        styleCache_1kmlibbuffer6[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_2kmlibbuffer4[key]];
+    var allStyles = [styleCache_1kmlibbuffer6[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };
